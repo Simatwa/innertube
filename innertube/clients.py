@@ -50,7 +50,7 @@ class InnerTube(Client):
         referer: Optional[str] = None,
         locale: Optional[Locale] = None,
         auto: bool = True,
-        proxies: Optional[ProxyTypes] = None,
+        proxy: Optional[ProxyTypes] = None,
     ) -> None:
         if client_name is None:
             raise ValueError("Precondition failed: Missing client name")
@@ -80,7 +80,7 @@ class InnerTube(Client):
         super().__init__(
             adaptor=InnerTubeAdaptor(
                 context=context,
-                session=httpx.Client(base_url=config.base_url, proxies=proxies),
+                session=httpx.Client(base_url=config.base_url, proxy=proxy),
             )
         )
 
