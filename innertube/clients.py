@@ -3,7 +3,7 @@ from typing import List, Optional
 
 import httpx
 import mediate
-from httpx._types import ProxiesTypes
+from httpx._types import ProxyTypes
 
 from . import api, utils
 from .adaptor import InnerTubeAdaptor
@@ -50,7 +50,7 @@ class InnerTube(Client):
         referer: Optional[str] = None,
         locale: Optional[Locale] = None,
         auto: bool = True,
-        proxies: Optional[ProxiesTypes] = None,
+        proxies: Optional[ProxyTypes] = None,
     ) -> None:
         if client_name is None:
             raise ValueError("Precondition failed: Missing client name")
